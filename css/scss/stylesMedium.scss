@@ -1,0 +1,98 @@
+@media(max-width:1279px)and(min-width:1024px)
+{
+@font-face {
+    font-family:"stem-light" ;
+    src: url('font/stem-light.woff2') format('woff2');
+}
+@font-face {
+    font-family:"gilroy-bold" ;
+    src: url('font/gilroy-bold.woff2') format('woff2');
+}
+%flex_row{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+%flex_column{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.header{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    &__Lable{
+    margin-left: 10px;
+    }
+    &__h1{
+        font-weight: 700;
+        line-height: 32px;
+        font-size: 24px;
+        font-family:'stem-light', Arial, Helvetica, sans-serif;
+    }
+    &__section{
+      @extend %flex_row;
+      justify-content: end;
+      flex-grow: 1;
+      margin-right: 10px;
+      margin-left: 5px;
+    }
+    &__Anchors{
+        @extend %flex_row;
+        justify-content: end;
+        align-content: center;
+        &_anchor{
+            display:inline-block;
+            margin-right: 8px;
+            text-decoration: none;
+            font-family:'stem-light', Arial, Helvetica, sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 24px;
+            color: black;
+        }
+    }
+    &__contacts{
+        @extend %flex_row;
+        align-content: center;
+        margin-left: 10px;        
+        &_connection{
+            @extend %flex_column;
+            text-align: right;
+            font-family:'stem-light', Arial, Helvetica, sans-serif;
+            justify-content: center;
+            margin-right: 32px;
+               &_p1{
+                font-weight: 700;
+                font-size: 13px;
+                line-height: 18px;
+                margin:0 0 4px 0;
+               }
+               &_p2{
+                font-weight: 600;
+                font-size: 18px;
+                line-height: 24px;
+                margin:0;
+               }
+        }
+    }
+    &__button{
+        display: flex;
+        height: 40px;
+        width: 150px;
+        background-color: rgba(0, 172, 165, 1);
+        border-radius: 4px;
+        justify-content: center;
+        align-items: center;
+        &_a{
+           text-decoration: none;
+           font-weight: 500;
+           font-size: 12px;
+           line-height: 20px;
+           color: rgba(255, 255, 255, 1);
+        }
+    }
+ }
+}

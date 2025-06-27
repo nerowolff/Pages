@@ -1,0 +1,451 @@
+@font-face {
+    font-family:"stem-light" ;
+    src: url('../../font/stem-light.woff2') format('woff2');
+}
+@font-face {
+    font-family:"Stem-Bold" ;
+    src: url('../../font/Stem-Bold.woff2') format('woff2');
+}
+@font-face {
+    font-family:"gilroy-bold" ;
+    src: url('../../font/gilroy-bold.woff2') format('woff2');
+}
+%flex_row{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+%flex_column{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+@mixin button($_width,$_height){
+    display: flex;
+    height:$_height;
+    width:$_width;
+    background-color: rgba(0, 172, 165, 1);
+    border-radius: 4px;
+    justify-content: center;
+    align-items: center;
+}
+@mixin font($weight,$size,$height){
+    font-weight: $weight;
+    font-size: $size;
+    line-height: $height;
+}
+body{
+    font-family:'stem-light', Arial, Helvetica, sans-serif;
+    max-width: 1440px;
+    margin: auto;
+}
+.header{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    &__Lable{
+    margin-left: 40px;
+    }
+    &__h1{
+        font-weight: 700;
+        line-height: 32px;
+        font-size: 28px;
+        font-family:'stem-light', Arial, Helvetica, sans-serif;
+    }
+    &__section{
+      @extend %flex_row;
+      justify-content: end;
+      flex-grow: 1;
+      margin-right: 40px;
+    }
+    &__Anchors{
+        @extend %flex_row;
+        justify-content: end;
+        align-content: center;
+        &_anchor{
+            display:inline-block;
+            margin-right: 24px;
+            text-decoration: none;
+            font-family:'stem-light', Arial, Helvetica, sans-serif;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 24px;
+            color: black;
+        }
+    }
+    &__contacts{
+        @extend %flex_row;
+        align-content: center;
+        margin-left: 40px;        
+        &_connection{
+            @extend %flex_column;
+            text-align: right;
+            font-family:'stem-light', Arial, Helvetica, sans-serif;
+            justify-content: center;
+            margin-right: 32px;
+               &_p1{
+                font-weight: 700;
+                font-size: 13px;
+                line-height: 18px;
+                margin:0 0 4px 0;
+               }
+               &_p2{
+                font-weight: 600;
+                font-size: 18px;
+                line-height: 24px;
+                margin:0;
+               }
+        }
+    }
+    &__button{
+         
+        &_a{
+            @include button(168px,44px);
+           text-decoration: none;
+           font-weight: 500;
+           font-size: 15px;
+           line-height: 20px;
+           color: rgba(255, 255, 255, 1);
+           &:hover{
+            background-color: rgb(4, 88, 86);
+        }
+        &:active{
+            background-color: rgba(0, 172, 165, 1);
+
+            border-color: rgb(4, 88, 86);
+            color:  rgb(4, 88, 86);;
+        }       
+        }
+    }
+}
+.mainHead{
+    @extend %flex_row;
+    &__img{
+        width: 50%;
+        min-width: 512px;
+        margin: auto;
+    }
+    &__empty{
+        @extend %flex_column;
+        background-color: rgba(125, 216, 63, 1);
+        flex-grow: 1;
+        justify-content: center;
+        align-content: center;
+        width: 50%;
+        &_title{
+            max-width: 445px;
+            color: white;
+        &_h2{
+            font-family: 'gilroy-bold',Arial, Helvetica, sans-serif;
+            font-size: 64px;
+            font-weight: 700;
+            line-height: 70.4px;
+            margin: 0;
+        }
+        &_p{
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 32px;
+        }
+    }
+    &_button{ 
+        position: relative;
+        &_a{
+             @include button(195px,56px);
+            color:rgba(255, 255, 255, 1);
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 24px;
+            text-decoration: none;
+            justify-content: start;
+            padding-left: 30px; 
+            &:hover{
+                background-color: rgb(4, 88, 86);
+            }
+            &:active{
+                background-color: rgba(0, 172, 165, 1);
+
+                border-color: rgb(4, 88, 86);
+                color:  rgb(4, 88, 86);;
+            }       
+        } 
+        &_img{
+            position: absolute;
+            margin-left: 170px;
+            margin-top: -34px;
+        }  
+    }
+}
+}
+.mainBody{
+    @extend %flex_row;
+    justify-content:space-between;
+    margin: 100px 165px;
+    &__title{
+        @extend %flex_column;
+        justify-content: center;
+        margin: auto;
+            &_block{
+                width: 540px;
+                height: 304px;
+                &_h2{
+                    font-family:'gilroy-bold';    
+                    font-weight: 700;
+                    font-size: 48px;
+                    line-height: 52px;
+                    padding-right: 60px;
+                    margin: 0;          
+                }
+                &_p{
+                    font-family:'gilroy-bold';
+                    font-weight: 700;
+                    font-size: 18px;
+                    line-height: 24px;  
+                }
+                &_bottom{
+                    
+                    &_p{
+                        @include button(161px,56px);
+                        text-decoration: none;
+                        font-family:'gilroy-bold';
+                        font-weight: 700;
+                        font-size: 18px;
+                        line-height: 24px;
+                        color: rgba(255, 255, 255, 1);
+                        &:hover{
+                            background-color: rgb(4, 88, 86);
+                        }
+                        &:active{
+                            background-color: rgba(0, 172, 165, 1);
+
+                            border-color: rgb(4, 88, 86);
+                            color:  rgb(4, 88, 86);;
+                        }
+                    }
+                    
+                }
+            }
+    }
+    &__imgs{
+        @extend %flex_column;
+        margin: auto;
+        &_1st{
+            margin-left: 200px;
+        }
+        &_2nd{
+            margin-top: -75px;
+        }
+    }
+}
+.price{
+    background-color: rgba(125, 216, 63, 1);
+    @extend %flex_column;
+    justify-content: center;
+    align-content: center;
+    &__title{
+        align-self: center;
+    @extend %flex_column;
+    max-width: 730px;
+    margin-bottom: 64px;
+    &_h3{
+        font-family: 'Stem-Bold', Arial, Helvetica, sans-serif; 
+        margin-top: 100px;
+        margin-bottom: 24px;
+        @include font(700,48px,52px);
+        display: flex;
+        align-self: center;
+        color:white;
+        }
+        &_p{
+            
+           @include font(500,24px,31.2px);
+           color: white; 
+           margin-bottom: 0;
+        }
+    }
+    &__list{
+        @extend %flex_row;
+        justify-content: center;
+        margin-bottom:70px;
+            &_frame{
+            border-radius: 10px;
+            background-color: white;
+            width: 255px;
+            height: 188px; 
+            margin: 0 30px 30px 0;
+                &_widow{        
+                margin: 32px;
+                &>h5{
+                @include font(600,18px,24px);
+                margin-bottom: 16px;
+                }
+                &>p{
+                @include font(700,18px,24px);
+                color: rgba(0, 172, 165, 1)
+                }
+                &>button{
+                    @include button(191px,40px);
+                    color:white;
+                    border: none;
+                    &:hover{
+                        background-color: rgb(4, 88, 86);
+                    }
+                    &:active{
+                        background-color: rgba(0, 172, 165, 1);
+                        border-color: rgb(4, 88, 86);
+                        color:  rgb(4, 88, 86);;
+                    }
+                }  
+            }
+        }
+        
+        
+    }
+}
+.benefits{
+    background-color: rgba(255, 255, 255, 1);
+    margin: 120px 0;
+    @extend %flex_column;
+    justify-content: center;
+    align-content: center;
+    &__title{
+        max-width: 720px;
+        @extend %flex_column;
+        margin: auto;
+        &>h4{
+            text-align: center;
+            @include font(700,28px,36.4px);
+            color: rgba(0, 172, 165, 1);
+            margin:0 0 24px 0;
+        }
+        &>h3{
+            font-family: 'Stem-Bold', Arial, Helvetica, sans-serif; ;
+            margin:0 0 24px 0;
+            @include font(700,64px,68px);
+            text-align: center;
+        }
+        &>p{
+            @include font(500,24px,31.2px);
+            text-align:center;
+            margin:0 0 64px 0;
+        }
+    }
+    &_list{
+        margin: 0;
+        @extend %flex_row;
+        align-content: center;
+        justify-content:space-between;
+        &_1{
+            max-width: 255px;
+            @extend %flex_column;
+            margin:auto;
+            padding: 0 12px 0 12px;
+
+            &>img{  
+                border-radius: 70px;
+                align-self: center;
+                display: flex;
+                height: 80px;
+                width: 80px;
+                object-fit: none;
+                margin-bottom: 32px;
+            }
+            &>h2{
+                font-family: 'Stem-Bold', Arial, Helvetica, sans-serif; 
+                text-align: center;
+                @include font(700,28px,36.4px);
+                margin-bottom: 16px;
+                margin-top: 0;
+            }
+            &>p{
+                @include font(700,18px,24px);
+                text-align: center;
+                margin: 0;
+                color: rgba(0, 0, 0, 0.4);
+            }
+        }
+    }
+}
+.calling{
+    background-color: rgba(125, 216, 63, 1);
+    &__frame{
+        padding:100px 0 100px 0;
+        &_title{
+            @extend %flex_column;
+            justify-content: center;
+            align-content: center; 
+            margin-bottom: 40px; 
+            &>h2{
+                @include font(700,48px,52px);
+                color: white;
+                margin-bottom: 16px;
+            }   
+            &>p{
+                @include font(600,18px,24px);
+                color: white;
+                margin: 0;
+                text-align: center;
+            }       
+        }
+        &_form{
+            @extend %flex_column;
+            justify-content: center;
+            align-content: center;
+            &_input{
+                @extend %flex_row;
+                justify-content: center;
+                &>input{
+                    width: 240px;
+                    height: 56px;
+                    border-radius: 10px;
+                    border:none;
+                    font-size: 19px;
+                    padding-left: 20px;
+                    color: grey;
+                    font-weight: 700;
+                }
+                &>button{
+                    @include button(206px,56px );
+                    margin-left: 16px;
+                    @include font(700,18px,24px);
+                    color: rgba(255, 255, 255, 1);
+                    border: none;
+                    &:hover{
+                        background-color: rgb(4, 88, 86);
+                    }
+                    &:active{
+                        background-color: rgba(0, 172, 165, 1);
+                        border-color: rgb(4, 88, 86);
+                        color:  rgb(4, 88, 86);;
+                    }
+                }
+            }
+            &>p{
+                max-width: 482px;
+                text-align: center;
+                color: white;
+                @include font(600,15px,20px);
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+.certificate{
+    @extend %flex_column;
+    align-content: center;
+    margin: 120px 0 120px 0;
+    &>h2{
+        font-family:'Stem-Bold', Arial, Helvetica, sans-serif; 
+        text-align: center;
+        margin:0 auto 64px auto; 
+        @include font(700,48px,52px)
+    }
+    &__list{
+        @extend %flex_row;
+        justify-content: space-between;
+        &>img{
+            margin: auto;
+        }
+    }
+}
